@@ -1,6 +1,5 @@
 
- 1) Author.includes(:books).group(:author_id).count
-
+ 1) Author.joins(:books).group("authors.name").count("books.author_id")
  2) Author.includes(:books).where(books: { published: true }).count
 
 3) Author.joins("INNER JOIN books ON books.author_id = authors.id AND books.sold_quantity >20")
